@@ -1,0 +1,15 @@
+.Nav {
+    background-color: #3B3486;
+}
+.img-logo {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+ul {
+    list-style: none;
+}
+ul a {
+    text-decoration: none;
+    color: #FCFDF2; 
+}

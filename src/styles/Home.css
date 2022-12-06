@@ -1,0 +1,32 @@
+.input-controler {
+    background-color: #3B3486;
+    color: white;
+    width: 100%;
+    border-radius: 50px;
+}
+.input-controler input {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.alunos-table {
+    background: linear-gradient( #3B3486, #7743DB );
+    border-radius: 10px;
+    height: 65vh;
+    overflow-y: scroll;
+}
+.tables tr {
+    border-bottom: 1px solid #FFE9B1;
+}
+.thead-tables {
+    color: #FFE9B1 !important;
+}
+.alunos-table .tables-size {
+    width: 10%;
+    height: 40px;
+    color: #fff;
+    font-weight: bold;
+    border-right: 1px solid #FFE9B1;
+}
