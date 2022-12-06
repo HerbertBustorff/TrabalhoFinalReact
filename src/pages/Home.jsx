@@ -7,15 +7,15 @@ const Home = () => {
     const [api, setApi] = useState([]);
     const [busca, setBusca] = useState([]);
 
-    const Rest = `http://127.0.0.1:8000/api/store`
+    const Rest = `http://127.0.0.1:8000/api/Alunos`
 
     useEffect(() => {
         fetch(Rest)
             .then(res => res.json())
             .then(data => {
                 setApi(data.data);
-                // console.log(data);
-                // console.log(data.data);
+                 console.log(data);
+                 console.log(data.data);
             })
 
         // eslint-disable-next-line
@@ -74,21 +74,21 @@ const Home = () => {
                                             </td>
                                             <td className="tables-size text-center">
                                                 <span>
-                                                    {dados.noteone = !null ? dados.noteone : 'Sem Nota'}
+                                                    {dados.notaone = !null ? dados.notaone : 'Sem Nota'}
                                                 </span>
                                             </td>
                                             <td className="tables-size text-center">
                                                 <span>
-                                                    {dados.notetwo = !null ? dados.notetwo : 'Sem Nota'}
+                                                    {dados.notatwo = !null ? dados.notatwo : 'Sem Nota'}
                                                 </span>
                                             </td>
                                             <td className="tables-size text-center">
                                                 <div className="d-flex justify-content-center">
                                                     <span className="w-50">
-                                                        {(parseInt(dados.noteone) + parseInt(dados.notetwo)) / 2}
+                                                        {(parseInt(dados.notaone) + parseInt(dados.notatwo)) / 2}
                                                     </span>
                                                     <span className="w-50">
-                                                        {(parseInt(dados.noteone) + parseInt(dados.notetwo)) / 2 < 6 ? '😢' : '😁'}
+                                                        {(parseInt(dados.notaone) + parseInt(dados.notatwo)) / 2 < 6 ? '😢' : '😁'}
                                                     </span>
                                                 </div>
                                             </td>

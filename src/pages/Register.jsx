@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import '../styles/Register.css';
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
-    const Rest = `http://127.0.0.1:8000/api/store`
+    let navigate = useNavigate()
+    const Rest = `http://127.0.0.1:8000/api/Alunos`
     const [data, setData] = useState({
         name: '',
-        matricule: '',
-        noteone: '',
-        notetwo: '',
+        notaone: '',
+        notatwo: '',
 
     })
 
@@ -16,12 +17,13 @@ const Register = () => {
         e.preventDefault();
         axios.post(Rest, {
             name: data.name,
-            matricule: data.matricule,
-            noteone: data.noteone,
-            notetwo: data.notetwo,
+            notaone: data.notaone,
+            notatwo: data.notatwo,
         })
             .then(res => {
                 console.log(res.data)
+                navigate("/")
+
             })
 
         if (!data) {
@@ -53,18 +55,18 @@ const Register = () => {
                     <label className="name-input">
                         Nota 1
                     </label>
-                    <input className="mt-2 p-2" onChange={(e) => handle(e)} id="noteone" value={data.noteone} type="text" />
-                    {data['noteone'] === '' ? <span className="text-danger fw-bold">Campo Vazio</span> : ''}
+                    <input className="mt-2 p-2" onChange={(e) => handle(e)} id="notaone" value={data.notaone} type="text" />
+                    {data['notaone'] === '' ? <span className="text-danger fw-bold">Campo Vazio</span> : ''}
                 </div>
                 <div className="my-3">
                     <label className="name-input">
                         Nota 2
                     </label>
-                    <input className="mt-2 p-2" onChange={(e) => handle(e)} id="notetwo" value={data.notetwo} type="text" />
-                    {data['notetwo'] === '' ? <span className="text-danger fw-bold">Campo Vazio</span> : ''}
+                    <input className="mt-2 p-2" onChange={(e) => handle(e)} id="notatwo" value={data.notatwo} type="text" />
+                    {data['notatwo'] === '' ? <span className="text-danger fw-bold">Campo Vazio</span> : ''}
                 </div>
                 <div className="w-100 d-flex justify-content-center">
-                    {data['name'] !== '' && data['noteone'] !== '' && data['notetwo'] !== '' ?
+                    {data['name'] !== '' && data['notaone'] !== '' && data['notatwo'] !== '' ?
                         <div>
                             <button type="submit" className="btn-submit px-5 py-2">
                                 Cadastrar
